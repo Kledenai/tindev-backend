@@ -1,0 +1,11 @@
+{
+  "name": "tinder-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Kledenai/tinder-backend.git",
+  "author": "Kledenai <bruno.silva1643@etec.sp.gov.br>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
