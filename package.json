@@ -5,6 +5,9 @@
   "repository": "https://github.com/Kledenai/tinder-backend.git",
   "author": "Kledenai <bruno.silva1643@etec.sp.gov.br>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
