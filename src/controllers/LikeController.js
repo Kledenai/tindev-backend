@@ -17,8 +17,12 @@ module.exports = {
             const loggedSocket = req.connectedUsers[user];
             const targetSocket = req.connectedUsers[devId];
 
-            if(loggedSocket) {
+            if(loggedSocket){
                 req.io.to(loggedSocket).emit('match', targetDev);
+            }
+
+            if(targetSocket){
+                req.io.to(loggedSocket).emit('match', loggedDev);
             }
         }
 
