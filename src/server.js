@@ -10,6 +10,10 @@ const io = require('socket.io')(server);
 
 io.on('connection', socket => {
     console.log('nova conexão', socket.id);
+
+    socket.on('hello', message => {
+        console.log(message)
+    })
 });
 
 mongoose.connect('mongodb+srv://kledenai:qRVepHoNwAE5zC82@cluster0-rhehb.mongodb.net/tinder-server?retryWrites=true&w=majority', {
