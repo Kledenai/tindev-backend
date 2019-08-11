@@ -22,7 +22,13 @@ mongoose.connect('mongodb+srv://kledenai:qRVepHoNwAE5zC82@cluster0-rhehb.mongodb
     useNewUrlParser: true
 });
 
-app.use();
+app.use((req, res, next) => {
+    req.io = io;
+
+    req.connectedUsers = connectedUsers;
+
+    return next();
+});
 
 app.use(cors());
 app.use(express.json());
