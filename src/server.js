@@ -8,23 +8,21 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
+const connectedUsers = {};
+
 io.on('connection', socket => {
-    console.log('nova conexão', socket.id);
+    const { user } = socket.handshake.query;
 
-    socket.on('hello', message => {
-        console.log(message)
-    });
+    console.log(user, socket.id);
 
-    setTimeout(() => {
-        socket.emit('world', {
-            message: 'Oministack'
-        });
-    })
+    connectedUsers[user]
 });
 
 mongoose.connect('mongodb+srv://kledenai:qRVepHoNwAE5zC82@cluster0-rhehb.mongodb.net/tinder-server?retryWrites=true&w=majority', {
     useNewUrlParser: true
 });
+
+app.use();
 
 app.use(cors());
 app.use(express.json());
